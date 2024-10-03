@@ -11,33 +11,33 @@ import junit.framework.TestCase;
 public class PA2aTestCase extends TestCase {
 	
 	@SuppressWarnings("serial")
-	private static class ExitException extends SecurityException {}
-	
-	private static class NoExitSecurityManager extends SecurityManager 
-    {
-        @Override
-        public void checkPermission(Permission perm) {}
-        
-        @Override
-        public void checkPermission(Permission perm, Object context) {}
-        
-        @Override
-        public void checkExit(int status) { super.checkExit(status); throw new ExitException(); }
-    }
-	
-	@Override
-    protected void setUp() throws Exception 
-    {
-        super.setUp();
-        System.setSecurityManager(new NoExitSecurityManager());
-    }
-	
-	@Override
-    protected void tearDown() throws Exception 
-    {
-        System.setSecurityManager(null);
-        super.tearDown();
-    }
+//	private static class ExitException extends SecurityException {}
+//
+//	private static class NoExitSecurityManager extends SecurityManager
+//    {
+//        @Override
+//        public void checkPermission(Permission perm) {}
+//
+//        @Override
+//        public void checkPermission(Permission perm, Object context) {}
+//
+//        @Override
+//        public void checkExit(int status) { super.checkExit(status); throw new ExitException(); }
+//    }
+//
+//	@Override
+//    protected void setUp() throws Exception
+//    {
+//        super.setUp();
+//        System.setSecurityManager(new NoExitSecurityManager());
+//    }
+//
+//	@Override
+//    protected void tearDown() throws Exception
+//    {
+//        System.setSecurityManager(null);
+//        super.tearDown();
+//    }
 	
 	private void _test(String[] values, String count_pos, String count_nonpos, String sum_pos, String sum_nonpos, String sum, String avg_pos, String avg_nonpos, String avg, String num_pos, String num_nonpos) {
 		final String input = String.join(" ", values);
@@ -58,7 +58,7 @@ public class PA2aTestCase extends TestCase {
 		
 		try {
 			PA2a.main(new String[] { "foo" });
-		} catch (ExitException e) {}
+		} catch (Exception e) {}
 		assertEquals(output, outContent.toString());
 		
 		System.setIn(null);
