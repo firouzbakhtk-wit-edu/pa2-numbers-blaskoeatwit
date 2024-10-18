@@ -2,6 +2,7 @@ package edu.wit.cs.comp1000;
 
 import java.util.Scanner;
 
+//Now passes tests
 public class PA2b {
 
 	public static void main(String[] args) {

@@ -5,6 +5,7 @@ import java.util.Scanner;
 // TODO: document this class
 public class PA2a {
 
+	//Now passes tests
 	// TODO: document this function
 	public static void main(String[] args) {
 
